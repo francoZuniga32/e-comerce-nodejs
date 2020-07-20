@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('component/utilidades/header');%>
+<link rel="stylesheet" href="css/estrellas.css">
+<link rel="stylesheet" href="css/favoritos.css">
+<script src="/Js/favoritos.js"></script>
+
+    <body>
+        <%- include('component/utilidades/navegador');%>
+        <div class="container justify-content-end contenido">
+            <% 
+            if(data){
+            var i = 0;
+                while(i < data.length){  %>
+                    <%- include('component/favoritos/item', {data: data[i]});%>
+                    <% i++; 
+                }   
+            } %>
+        </div>
+    </body>
+    <%- include('component/utilidades/footer');%>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('component/utilidades/header');%>
+
+    <body class="h-100 w-100 container-fluid d-flex justify-content-center align-items-center">
+        <div class="card" style="width: 18rem;">
+            <script src="/Js/validarfomulario.js"></script>
+            <form action="/perfil/inicio" method="POST" class="m-1" onsubmit="return validarLoguin()">
+                <div class="form-group">
+                    <label for="email">Usuario:</label>
+                    <input class="form-control" type="email" name="email" id="email" placeholder="example@mail.com">
+                    <label for="contrasenia">Contraseña</label>
+                    <input class="form-control" type="password" name="contrasenia" id="contrasenia" placeholder="contraseña">
+                    <button type="submit" class="btn btn-success">Ingresar</button>
+                </div>
+            </form>
+            <script src="/Js/jquery.md5.js"></script>
+        </div>
+    </body>
+
+</html>

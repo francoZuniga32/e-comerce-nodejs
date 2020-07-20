@@ -1,0 +1,115 @@
+<nav class="navbar navbar-expand-lg">
+  <a class="navbar-brand" href="#">
+      <img src="Media/logo.png" alt="" class="logo">
+  </a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <i class="material-icons md-color">
+          menu
+      </i>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+              <a class="nav-link text-center" href="/">Inicio</a>
+          </li>
+          <li class="nav-item">
+              <a class="nav-link text-center" href="/productos">Productos</a>
+          </li>
+          <li class="nav-item">
+              <a class="nav-link text-center" href="">Contacto</a>
+          </li>
+      </ul>
+      <div class="d-flex justify-content-cente">
+        <%if(session.nombre != "none" && session.tipo != "none"){%>
+        <a href="/favoritos" class="btn">
+          <i class="material-icons">
+            favorite
+          </i>
+        </a>
+        <span class="badge badge-pill badge-light align-middle" onclick="abrirVentana('/carrito');">
+          4
+          <i class="material-icons">
+            shopping_cart
+          </i>
+        </span>
+        <div class="dropdown">
+          <button class="btn badge-light" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <i class="material-icons">
+              person
+            </i>
+          </button>
+          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            <a class="btn" href="/perfil/salir">Salir</a>
+          </div>
+        </div>
+        <%}else{%>
+          <div class="dropdown">
+            <a href="/perfil/login">
+              <span class="badge badge-pill badge-light align-middle">
+                <i class="material-icons">
+                  favorite
+                </i>
+              </span>
+            </a>
+          </div>
+          <a href="/perfil/login">
+            <span class="badge badge-pill badge-light align-middle" onclick="abrirVentana('/carrito');">
+              <i class="material-icons">
+                shopping_cart
+              </i>
+            </span>
+          </a>
+          <div class="dropdown">
+            <button class="btn badge-light" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <i class="material-icons">
+                perm_identity
+              </i>
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+              <form action="http://localhost:3000/perfil/inicio" method="POST" class="m-1">
+                <div class="form-group">
+                  <label for="email">Usuario:</label>
+                  <input class="form-control" type="email" name="email" id="email" placeholder="example@mail.com">
+                  <label for="contrasena">Contraseña</label>
+                  <input class="form-control" type="password" name="contrasena" id="contrasena" placeholder="contraseña">
+                  <button type="submit" class="btn btn-success" onclick="enviar()">Ingresar</button>
+                </div>
+              </form>
+              <script src="/Js/jquery.md5.js"></script>
+              <script>
+                function enviar(){
+                  console.log($.md5($("#contrasena").val()));
+                  var parametros = {
+                    "email" : $("#email").val() ,
+                    "contrasena" : $.md5($("#contrasena").val()) ,
+                  };
+                  $.ajax({
+                    data:  parametros, //datos que se envian a traves de ajax
+                    url:   'http://localhost:3000/perfil/login', //archivo que recibe la peticion
+                    type:  'post', //método de envio
+                    beforeSend: function (){
+                      $("#login").append("<div class=\"spinner-border text-primary\" role=\"status\" id=\"load\"><span class=\"sr-only\">Loading...</span></div>");
+                    },
+                    success:  function (response) { //una vez que el archivo recibe el request lo procesa y lo devuelve
+                      if(response == 1){
+                        return true;
+                      }else{
+                        return false;
+                      }
+                    }
+                  });
+                };
+              </script>
+            </div>
+          </div>
+        <%}%>
+      </div>
+      <form class="form-inline my-2 my-lg-0">
+        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+      </form>
+  </div>
+</nav>
+<script>
+
+</script>

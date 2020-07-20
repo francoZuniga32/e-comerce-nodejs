@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <form action="/procesar-pago" method="POST">
+      <script
+       src="https://www.mercadopago.com.ar/integrations/v1/web-payment-checkout.js"
+       data-preference-id="$$id$$">
+      </script>
+    </form>
+    <%- preference.response.init_point%>
+</body>
+</html>

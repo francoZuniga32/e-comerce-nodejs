@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('component/utilidades/header');%>
+    <%- include('component/utilidades/navegador');%>
+
+        <body>
+            <div style="min-height: 500px;" class="container justify-content-end">
+                <p>Para poder ver sus compras y el estado de las mismas devera dirijirse al su E-mail (el que uso en la compra) o su usuario de mercadopago.</p>
+                <div class="row">
+                    <div class="col-sm">
+                        <a href="https://www.mercadopago.com.ar/" class="btn btn-info" target="_blanck">Mercado Pago</a>
+                    </div>
+                    <div class="col-sm">
+                        <div class="dropdown">
+                            <button class="btn btn-info dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      E-mail
+                    </button>
+                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                <a class="dropdown-item" href="https://mail.google.com/" target="_blank">G-mail</a>
+                                <a class="dropdown-item" href="https://office.live.com/" target="_blank">Outlook</a>
+                                <a class="dropdown-item" href="https://espanol.yahoo.com/" target="_blank">Yahoo</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </body>
+        <%- include('component/utilidades/footer');%>
+
+</html>

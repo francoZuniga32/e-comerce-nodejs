@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('component/utilidades/header');%>
+    <%- include('component/utilidades/navegador');%>
+
+        <body>
+            <div class="container justify-content-end">
+                <% 
+        if(data){
+        var i = 0;
+            
+            while(i < data.length){  %>
+                    <%- include('component/carrito/item', {data: data[i]});%>
+                        <% i++; 
+            }   
+        }%>
+            </div>
+            <script>
+                $("input[type='number']").inputSpinner();
+            </script>
+            <%- include('component/utilidades/footer');%>
+        </body>
+
+</html>

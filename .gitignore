@@ -1,0 +1,4 @@
+#ignoramos el archivo de configuracion
+src/config.json
+#ignoramos el nodemodeules
+/node_modules

@@ -1,0 +1,17 @@
+#productos , .contenedor-productos{
+    margin-bottom: 50px;
+}
+.card{
+    justify-items: center;
+}
+
+.card-text{
+    overflow-wrap: break-word;
+    overflow: hidden;
+    height: 50px;
+}
+
+.card-img-top{
+    height: 200px;
+    width: auto;
+}

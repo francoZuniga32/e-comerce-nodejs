@@ -1,0 +1,48 @@
+<div class="col">
+  <div class="card">
+    <div onclick="abrir(<%- indice+1 %>);">
+      <% if(media){ %>
+        <img src="<%- media %>" class="card-img-top" alt="...">
+      <% } else{ %>
+        <img src="/Media/ing.webp" class="card-img-top" alt="...">
+      <% } %>
+    <div class="card-body">
+      <h5 class="card-title"><%= data.nombre %></h5>
+      <p class="card-text"><%= data.descripcion %></p>
+    </div>
+    </div>
+    <div class="card-footer">
+      <div class="btn-group" role="group" aria-label="Third group">
+        <%if(session.nombre != "none" && session.tipo != "none" && session.iduser != "none"){%>
+        <div class="dropdown">
+          <button class="btn btn-ligth dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <i class="material-icons">
+              favorite_border
+            </i>
+          </button>
+          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            <input type="number" value="1" min="3" max="5" step="1" id="puntos" name="puntos"/>
+            <button class="btn" onclick="addfavoritos(<%= data.idProducto %>)">Agregar</button>
+          </div>
+        </div>
+        <button type="button" class="btn btn-ligth" onclick="addcarrito(<%- data.idProducto %>)">
+          <i class="material-icons" id="card-item">
+            add_shopping_cart
+          </i>
+        </button>
+        <%}else{%>
+        <a type="button" class="btn btn-ligth" href="/perfil/entrar">
+          <i class="material-icons">
+            favorite_border
+          </i>
+        </a>
+        <a type="button" class="btn btn-ligth" href="/perfil/entrar">
+          <i class="material-icons">
+            add_shopping_cart
+          </i>
+        </a>
+        <%}%>
+          </div>
+    </div>
+  </div>
+</div>

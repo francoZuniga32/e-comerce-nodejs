@@ -1,0 +1,37 @@
+<div class="card mb-3">
+    <div class="row no-gutters">
+        <div class="col-md-2">
+            <% if( data.media != "" ){ %>
+                <img src="<%- data.media%>" class="card-img" alt="...">
+            <% } else { %>
+                <img src="/Media/ing.webp" class="card-img" alt="...">
+            <% } %>
+        </div>
+        <div class="col-md-10">
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-8">
+                        <h5 class="card-title">
+                            <%= data.nombre %>
+                        </h5>
+                        <p class="card-text">
+                            <a onclick="eliminar(<%- data.idProducto %>)">Eliminar</a>
+                        </p>
+                    </div>
+                    <div class="col-md-2">
+                        <p class="card-text">
+                            <input type="number" value="<%- data.cantidad %>" min="1" max="<%- data.stock %>" step="1" />
+                        </p>
+                    </div>
+                    <div class="col-md-2">
+                        <p class="card-text">
+                            <h4>
+                                <%- data.precio %>
+                            </h4>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

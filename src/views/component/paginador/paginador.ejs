@@ -1,0 +1,13 @@
+<div class="d-flex justify-content-center">
+    <nav aria-label="Page navigation example">
+        <% if(paginacion.paginaActual < 3 ){%>
+            <%- include('atras', {paginacion: paginacion});%>
+                <%}else{ 
+                    if(paginacion.paginaActual > paginacion.total - 2 ){ %>
+                <%- include('adelante', {paginacion: paginacion});%>
+                <% }else{%>
+                    <%- include('medio', {paginacion: paginacion});%>
+                <%}%>
+            <%}%>
+    </nav>
+</div>
