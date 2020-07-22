@@ -1,4 +1,5 @@
 const indexControler = {};
+const pool = require('../baseDeDatos');
 
 indexControler.all = (req, res)=>{
     var session = {
