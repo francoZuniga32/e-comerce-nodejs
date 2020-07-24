@@ -6,15 +6,19 @@
         <div class="card" style="width: 18rem;">
             <script src="/Js/validarfomulario.js"></script>
             <script src="/Js/jquery.sha256.js"></script>
-            <form action="/perfil/login/procesar" id="formulario" method="POST" class="m-1" onsubmit="return validarLoguin()">
+            <form action="/perfil/registro/procesar" method="POST" class="m-1" onsubmit="return validarRegistro()" id="formulario">
                 <div class="form-group">
                     <label for="email">Usuario:</label>
                     <input class="form-control" type="email" name="email" id="email" placeholder="example@mail.com">
+                    
                     <label for="contrasenia">Contraseña</label>
                     <input class="form-control" type="password" name="contrasenia" id="contrasenia" placeholder="contraseña">
+                    
+                    <label for="confirmarContrasenia">Confirmar Contraseña</label>
+                    <input class="form-control" type="password" name="confirmarContrasenia" id="confirmarContrasenia" placeholder="contraseña">
+                    <br>
                     <div class="col d-flex justify-content-between">
-                        <button type="button" class="btn btn-success" onclick="sendForm()">Ingresar</button>
-                        <a type="button" href="/perfil/registro" class="btn btn-success">Registrarse</a>
+                        <button type="button" class="btn btn-success" onclick="sendForm()">Registrar</button>
                     </div>
                 </div>
             </form>

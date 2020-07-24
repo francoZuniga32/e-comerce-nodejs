@@ -7,21 +7,10 @@ const indexControler = {};
 const pool = require('../baseDeDatos');
 
 indexControler.inicio = (req, res) => {
-    var session = {
-        "nombre": req.session.name,
-        "tipo": req.session.tipo,
-        "iduser": req.session.iduser
-    };
-    res.render('productos', { session: session });
+    res.render('productos', { session: req.session.user });
 }
 
 indexControler.paginador = (req, res) => {
-    var session = {
-        "nombre": req.session.name,
-        "tipo": req.session.tipo,
-        "iduser": req.session.iduser
-    };
-
     let cantidadPorPaguina = 3;
     let pagina = req.params.pagina;
     let paginaActual = (pagina - 1) * cantidadPorPaguina;
@@ -49,7 +38,7 @@ indexControler.paginador = (req, res) => {
                     total: totalpaginas,
                     paginaActual: pagina
                 },
-                session: session
+                session: req.session.user
             });
         });
     });

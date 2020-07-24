@@ -1,41 +1,31 @@
-const md5 = require('md5');
 const pool = require('../baseDeDatos');
 const perfilControler = {};
 
 perfilControler.all = (req, res) => {
-    var session = {
-        "nombre": req.session.name,
-        "tipo": req.session.tipo,
-        "iduser": req.session.iduser
-    };
-    console.log(session);
-    res.render('pefil', { session: session });
+    res.render('pefil', { session: req.session.user });
 };
 
 perfilControler.login = (req, res) => {
     //evaluamos si esta en la session
-    var session = {
-        "nombre": req.session.name,
-        "tipo": req.session.tipo,
-        "iduser": req.session.iduser
-    };
-
-    res.render('login', { session: session });
+    res.render('login', { session: req.session.user });
 };
 
-perfilControler.inicio = (req, res) => {
+perfilControler.procesarLogin = (req, res) => {
     var email = req.body.email;
-    var contrasenia = md5(req.body.contrasenia);
+    var contrasenia = req.body.contrasenia;
 
     pool.query('SELECT * FROM usuario WHERE email = ? AND contrasenia = ?', [email, contrasenia], (err, usuario) => {
         if (err) {
             console.log(err);
         }
-        if (usuario.length > 0) {
-            req.session.iduser = usuario[0]['idUsuario'];
-            req.session.name = usuario[0]['email'];
-            req.session.tipo = usuario[0]['tipo'];
 
+        if (usuario.length > 0) {
+            req.session.user = {
+                "iduser" : usuario[0]['idUsuario'],
+                "nombre" : usuario[0]['email'],
+                "tipo" : usuario[0]['tipo']
+            }
+            
             console.log("iduser:" + req.session.iduser);
             res.redirect('/perfil');
         } else {
@@ -44,11 +34,32 @@ perfilControler.inicio = (req, res) => {
     });
 };
 
+perfilControler.registro = (req, res)=>{
+    var session = req.session.user;
+
+    res.render('registro', {session: session});
+}
+
+perfilControler.procesarRegistro = (req, res)=>{
+    var session = req.session.user;
+
+    var email = req.body.email;
+    var contrasenia = req.body.contrasenia;
+    var consulta = "INSERT INTO `usuario`(`idUsuario`, `email`, `contrasenia`, `tipo`) VALUES (NULL,?,?,'normal')";
+    
+    console.log(contrasenia);
+    pool.query(consulta, [email, contrasenia], (err, usuario)=>{
+        if(err){
+            console.log(err);
+        }
+        res.redirect('/perfil/login');
+    });
+}
+
 perfilControler.salir = (req, res) => {
     //eliminamos la session
-    req.session.iduser = null;
-    req.session.name = null;
-    req.session.tipo = null;
+    req.session.user = undefined;
+    console.log(req.session.iduser);
     res.redirect('/');
 };
 

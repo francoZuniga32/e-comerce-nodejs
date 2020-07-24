@@ -1,8 +1,9 @@
 const favoritosRoutes = require('express').Router();
 const favoritosControler = require('../controllers/favoritoControler');
 
-favoritosRoutes.get('/', favoritosControler.list);
-favoritosRoutes.post('/add/:idproducto/:puntos', favoritosControler.add);
-favoritosRoutes.post('/remove/:idproducto', favoritosControler.remove);
+favoritosRoutes.use(require('../middleware/session').all);
+favoritosRoutes.get('/', favoritosControler.render);
+favoritosRoutes.post('/agregar/:idproducto/:puntos', favoritosControler.agregar);
+favoritosRoutes.post('/eliminar/:idproducto', favoritosControler.eliminar);
 
 module.exports = favoritosRoutes;

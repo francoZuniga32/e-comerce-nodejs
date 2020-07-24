@@ -45,18 +45,11 @@
         <div class="col-md-4 container">
             <div class="row">
                 <div class="col-sm d-flex justify-content-end">
-                    <div class="dropdown">
-                        <button class="btn btn-ligth dropdown-toggle" type="button" id="compartir<%= data.idProducto %> " data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <span class="material-icons">
-                                share
-                            </span>
-                        </button>
-                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                            <a class="dropdown-item" href="#">Action</a>
-                            <a class="dropdown-item" href="#">Another action</a>
-                            <a class="dropdown-item" href="#">Something else here</a>
-                        </div>
-                    </div>
+                    <button class="btn btn-ligth" type="button" onclick="addcarrito(<%= data.idProducto %>)" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <span class="material-icons">
+                            add_shopping_cart
+                        </span>
+                    </button>
                 </div>
                 <div class="col-sm d-flex justify-content-end">
                     <button type="button" class="btn btn-ligth" aria-label="Close" onclick="remove(<%- data.idProducto %>) ">

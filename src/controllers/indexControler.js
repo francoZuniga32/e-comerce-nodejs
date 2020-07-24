@@ -2,13 +2,8 @@ const indexControler = {};
 const pool = require('../baseDeDatos');
 
 indexControler.all = (req, res)=>{
-    var session = {
-        "nombre" : req.session.name,
-        "tipo" : req.session.tipo,
-        "iduser" : req.session.iduser
-    };
-    console.log(session);
-    res.render('index', {session: session});
+    console.log(req.session.user);
+    res.render('index', {session: req.session.user});
 }
 
 module.exports = indexControler;

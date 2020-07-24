@@ -13,7 +13,7 @@
     </div>
     <div class="card-footer">
       <div class="btn-group" role="group" aria-label="Third group">
-        <%if(session.nombre != "none" && session.tipo != "none" && session.iduser != "none"){%>
+        <%if(typeof(session) != "undefined"){%>
         <div class="dropdown">
           <button class="btn btn-ligth dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             <i class="material-icons">
@@ -31,12 +31,12 @@
           </i>
         </button>
         <%}else{%>
-        <a type="button" class="btn btn-ligth" href="/perfil/entrar">
+        <a type="button" class="btn btn-ligth" href="/perfil/login">
           <i class="material-icons">
             favorite_border
           </i>
         </a>
-        <a type="button" class="btn btn-ligth" href="/perfil/entrar">
+        <a type="button" class="btn btn-ligth" href="/perfil/login">
           <i class="material-icons">
             add_shopping_cart
           </i>

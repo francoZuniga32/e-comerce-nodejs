@@ -1,14 +1,15 @@
 const session = {};
 
 
-session.all = (req, res, next)=>{
+session.all = (req, res, next) => {
     //si existe la session no hacemos nada
-    if(!req.session.name && !req.session.tipo && !req.session.iduser){
-        req.session.name = "none";
-        req.session.userid = "none";
-        req.session.tipo = "none";   
+    console.log(req.session.user);
+
+    if (typeof (req.session.user) == "undefined") {
+        res.redirect('/');
+    } else {
+        next();
     }
-    next();
 };
 
 module.exports = session;

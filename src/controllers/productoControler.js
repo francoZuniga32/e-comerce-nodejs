@@ -2,6 +2,7 @@ const productoControler = {};
 const pool = require('../baseDeDatos');
 
 const mercadopago = require('mercadopago');
+const session = require('express-session');
 const configMercadoPago = require('../config.json').mercadopago;
 
 mercadopago.configure({
@@ -13,11 +14,6 @@ mercadopago.configure({
 
 
 productoControler.all = (req, res) => {
-  var session = {
-    "nombre": req.session.name,
-    "tipo": req.session.tipo,
-    "iduser": req.session.iduser
-  };
 
   console.log(session);
   pool.query('SELECT * FROM producto WHERE idProducto = ?', [req.params.idproducto], (err, producto) => {
@@ -30,7 +26,7 @@ productoControler.all = (req, res) => {
       }
       console.log(producto);
       console.log(media);
-      res.render('producto', { data: producto, media: media, session: session });
+      res.render('producto', { data: producto, media: media, session: req.session.user });
     });
   });
 };

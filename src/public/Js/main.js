@@ -15,7 +15,7 @@ function cargarPagina(pagina) {
         // método de envio
         type: "get",
         beforeSend: function () {
-            $("#productos").html("Procesando, espere por favor...");
+            $("#productos").html("<div class=\"spinner-border\" role=\"status\"><span class=\"sr-only\">Loading...</span></div>");
         },
         // una vez que el archivo recibe el request lo procesa y lo devuelve
         success: function (response) {
@@ -31,7 +31,7 @@ function eliminar(idProducto) {
     $.ajax({
         // datos que se envian a traves de ajax
         // archivo que recibe la peticion
-        url: "/carrito/removerproducto/" + idProducto,
+        url: "/carrito/remover/" + idProducto,
         // método de envio
         type: "post",
         beforeSend: function () {
@@ -47,7 +47,7 @@ function eliminar(idProducto) {
 function addcarrito(idProducto) {
     $.ajax({
         data: {}, //datos que se envian a traves de ajax
-        url: "/carrito/addproducto/"+idProducto, //archivo que recibe la peticion
+        url: "/carrito/cargar/"+idProducto, //archivo que recibe la peticion
         type: 'post', //método de envio
         beforeSend: function () {
 
@@ -58,16 +58,38 @@ function addcarrito(idProducto) {
     });
 }
 
+
+//funciones de favoritos
 function addfavoritos(idProducto){
     $.ajax({
         data: {}, //datos que se envian a traves de ajax
-        url: "/favoritos/add/"+idProducto+"/"+$("#puntos").val(), //archivo que recibe la peticion
+        url: "/favoritos/agregar/"+idProducto+"/"+$("#puntos").val(), //archivo que recibe la peticion
         type: 'post', //método de envio
         beforeSend: function () {
 
         },
         success: function (response) { //una vez que el archivo recibe el request lo procesa y lo devuelve
             window.open("/favoritos");
+        }
+    });
+}
+
+function remove(idProducto){
+    var url = '/favoritos/eliminar/'+idProducto;
+
+    $.ajax({
+        data: {}, //datos que se envian a traves de ajax
+        url: url, //archivo que recibe la peticion
+        type: 'post', //método de envio
+        beforeSend: function() {
+            
+        },
+        success: function(response) { //una vez que el archivo recibe el request lo procesa y lo devuelve
+            console.log(response);
+            if (response == 1) {
+                console.log("eliminando");
+                $("#"+idProducto).attr("style","display: none;");
+            }
         }
     });
 }

@@ -2,8 +2,9 @@ const carritoRouter = require('express').Router();
 
 const carritoControler = require('../controllers/carritoControler');
 
+carritoRouter.use(require('../middleware/session').all);
 carritoRouter.get('/', carritoControler.all);
-carritoRouter.post('/addproducto/:idproducto', carritoControler.add);
-carritoRouter.post('/removerproducto/:idproducto', carritoControler.remove);
+carritoRouter.post('/cargar/:idproducto', carritoControler.add);
+carritoRouter.post('/remover/:idproducto', carritoControler.remove);
 
 module.exports = carritoRouter;
