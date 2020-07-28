@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('component/utilidades/header');%>
+<%- include('component/utilidades/navegador', {session:session});%>
+<body>
+    <div class="container-fluid" style="justify-content: center;">
+        <% if(productos){ 
+            productos.forEach(producto => { %>
+                <%- include('component/administrar/card', {producto: producto}) %>   
+            <% });%>
+        <% } %> 
+    </div>
+</body>
+<%- include('component/utilidades/footer');%>
+</html>

@@ -1,10 +1,10 @@
 # Rutas-ES
 
-En esta carpeta se situan las rutas que se usan en la aplicacion, desde las que se renderizan las vistas de los usuarios.
+Las rutas de la aplicacion se situan en esta carpeta. La descripcion de estas rutas que se usan.
 
 ## Inicio
 
-mostramos la pantalla de inicio, donde podemos personalizarlo a nuestro negocio.
+Renderizamos el inicio de la paguina web, Podremos personalizarlo a las necesidades del negocio.
 
 ### GET
 

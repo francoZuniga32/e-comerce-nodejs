@@ -93,3 +93,19 @@ function remove(idProducto){
         }
     });
 }
+
+function eliminarMedia(idProducto, idMedia){
+    $.ajax({
+        data: {
+            "idmedia" : idMedia
+        }, //datos que se envian a traves de ajax
+        url: "/administrar/edit/eliminarmedia/"+idProducto, //archivo que recibe la peticion
+        type: 'post', //método de envio
+        beforeSend: function () {
+
+        },
+        success: function (response) { //una vez que el archivo recibe el request lo procesa y lo devuelve
+            $("#media"+idProducto).css("display","none");
+        }
+    });
+}

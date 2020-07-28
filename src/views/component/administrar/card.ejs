@@ -1,0 +1,38 @@
+<div class="card mb-3" style="max-width: 740px;">
+    <div class="row no-gutters">
+      <div class="col-md-4">
+        <% if( producto.media != "" ){ %>
+            <img src="<%- producto.media %>" class="card-img" alt="...">
+        <% } else { %>
+            <img src="/Media/ing.webp" class="card-img" alt="...">
+        <% } %>
+      </div>
+      <div class="col-md-8">
+        <div class="card-body">
+          <h5 class="card-title"><%= producto.nombre %></h5>
+          <p class="card-text"><%= producto.descripcion %></p>
+          <p class="card-text">
+            <div class="dropdown">
+                <button class="btn btn-ligth dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <span class="material-icons">
+                        settings
+                    </span>
+                </button>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                  <a class="btn dropdown-item" href="/administrar/edit/<%- producto.idProducto %>">
+                    <span class="material-icons">
+                        edit
+                    </span>
+                  </a>
+                  <a class="btn dropdown-item" href="#">
+                    <span class="material-icons">
+                        close
+                    </span>
+                  </a>
+                </div>
+              </div>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>

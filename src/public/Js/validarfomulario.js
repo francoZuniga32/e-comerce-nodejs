@@ -31,6 +31,40 @@ function validarRegistro() {
     return  retorno;
 }
 
+function validarEditarProducto(){
+    var nombre = $('#nombre').val();
+    var precio = $('#precio').val();
+    var stock = $('#stock').val();
+    var descripcion = $('#descripcion').val();
+    var tipo = $('#tipo').val();
+    var retorno = true;
+
+    if (nombre == null || nombre.length == 0 || /^\s+$/.test(nombre)) {
+        retorno = false;
+    } else if (precio == null || precio.length == 0 || /^\s+$/.test(precio)){
+        retorno = false;
+    } else if (stock == null || stock.length == 0 || /^\s+$/.test(stock)){
+        retorno = false;
+    } else if (descripcion == null || descripcion.length == 0 || /^\s+$/.test(descripcion)){
+        retorno = false;
+    } else if (tipo == null || tipo.length == 0 || /^\s+$/.test(tipo)){
+        retorno = false;
+    }
+
+    return retorno;
+}
+
+function validaAgregarMedia(){
+    var file = $('#fileMedia').val();
+    var retorno = true;
+
+    if(file == null || file.length == 0 || /^\s+$/.test(file)){
+        retorno = false;
+    }
+
+    return retorno;
+}
+
 function sendForm(){
     var contrasenia = $("#contrasenia").val()
     $("#contrasenia").val($.sha256(contrasenia));
