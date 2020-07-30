@@ -3,7 +3,7 @@ const pool = require('../baseDeDatos');
 
 carritoController.all = (req, res) => {
     var session = req.session.user;
-    
+
     pool.query("SELECT * FROM carrito, producto WHERE carrito.idProducto = producto.idProducto AND carrito.idUsuario = ?", [session.iduser], (err, carrito) => {
         if (err) {
             console.log(err);
@@ -43,7 +43,7 @@ carritoController.add = (req, res) => {
 
 carritoController.remove = (req, res) => {
     var session = req.session.user;
-    let producto = req.params.idproducto;
+    let producto = req.body.idproducto;
 
     pool.query("SELECT count(*) FROM carrito WHERE idUsuario = ? AND idProducto = ?", [session.iduser, producto], (err, controlCarrito) => {
         if (err) {

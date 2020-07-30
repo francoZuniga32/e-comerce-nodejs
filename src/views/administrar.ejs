@@ -2,14 +2,36 @@
 <html lang="en">
 <%- include('component/utilidades/header');%>
 <%- include('component/utilidades/navegador', {session:session});%>
+<script src="/Js/administracion.js"></script>
 <body>
     <div class="container-fluid" style="justify-content: center;">
-        <% if(productos){ 
-            productos.forEach(producto => { %>
-                <%- include('component/administrar/card', {producto: producto}) %>   
-            <% });%>
-        <% } %> 
+        <table class="table">
+            <thead class="w-100">
+              <tr>
+                <th scope="col">#ID</th>
+                <th scope="col">Nombre</th>
+                <th scope="col">Precio</th>
+                <th scope="col">Stock</th>
+                <th class="col">Descripcion</th>
+                <th class="col">tipo</th>
+                <th class="col">Media</th>
+                <th class="col">Imagenes</th>
+                <th class="col">Editar</th>
+                <th class="col">Eliminar</th>
+              </tr>
+            </thead>
+            <tbody>
+                <% if(productos){ 
+                    productos.forEach(producto => { %>
+                        <%- include('component/administrar/card', {producto: producto}) %>   
+                    <% });%>
+                <% } %> 
+            </tbody>
+        </table>
     </div>
+    <script src="https://code.jquery.com/jquery-2.2.0.min.js" type="text/javascript"></script>
+    <script src="/slick/slick.js" type="text/javascript" charset="utf-8"></script>
+    <script src="/Js/slik.js"></script>
 </body>
 <%- include('component/utilidades/footer');%>
 </html>

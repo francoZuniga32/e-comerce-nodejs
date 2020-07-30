@@ -10,10 +10,10 @@ administracionControler.render = async (req, res)=>{
     var consultaMedia = "SELECT * FROM media WHERE media.idProducto = ?";
 
     var productos = await pool.query(consultaProductos);
-    productos.forEach(async element => {
-        element.media = await pool.query(consultaMedia, [element.idProducto]);
-    });
-
+    for (let i = 0; i < productos.length; i++) {
+        const element = productos[i];
+        element.imagenes = await pool.query(consultaMedia, [element.idProducto]);
+    }
     res.render("administrar", {productos: productos, session, session});
 };
 
@@ -87,7 +87,7 @@ administracionControler.agregarmedia = (req, res) =>{
 }
 
 administracionControler.eliminarMedia = (req, res) => {
-    var idproducto = req.params.idproducto;
+    var idproducto = req.body.idproducto;
     var idmedia = req.body.idmedia;
     var consulta = "DELETE FROM `media` WHERE media.idProducto = ? AND media.idMedia = ?";
 
@@ -95,8 +95,12 @@ administracionControler.eliminarMedia = (req, res) => {
         if(err){
             console.error(err);
         }
-        res.status(200);
+        res.status(200).end();
     });
+    
+};
+
+administracionControler.agregarRender = (req, res)=>{
     
 };
 
@@ -105,7 +109,21 @@ administracionControler.agregar = (req, res)=>{
 };
 
 administracionControler.eliminar = (req, res)=>{
+    var idproducto = req.body.idproducto;
+    var consultaProducto = "DELETE FROM producto WHERE producto.idProducto = ?";
+    var consultaMedia = "DELETE FROM media WHERE media.idProducto = ?"
 
+    pool.query(consultaProducto, [idproducto], (err, producto)=>{
+        if(err){
+            console.error(err);
+        }
+        pool.query(consultaMedia, [idproducto], (err, media)=>{
+            if(err){
+                console.error(err);
+            }
+            res.status(200).end();
+        });
+    });
 };
 
 module.exports = administracionControler;
