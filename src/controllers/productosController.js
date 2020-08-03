@@ -1,31 +1,26 @@
-/**
- * Productos: mostrmos los pruductos en la galeria de productos
- * tenemos metodos de paguinacion donde mandamos los datos de paguinacion en el front
- * ademas de eso podemos ir organizando las distintos controladores de las rutas de /productos
- */
-const indexControler = {};
-const pool = require('../baseDeDatos');
+const productosControlador = {};
+const POOL = require('../baseDeDatos');
 
-indexControler.inicio = (req, res) => {
+productosControlador.inicio = (req, res) => {
     res.render('productos', { session: req.session.user });
 }
 
-indexControler.paginador = (req, res) => {
-    let cantidadPorPaguina = 3;
-    let pagina = req.params.pagina;
-    let paginaActual = (pagina - 1) * cantidadPorPaguina;
-
-    console.log(paginaActual);
+productosControlador.paginador = (req, res) => {
+    var cantidadPorPaguina = 3;
+    var pagina = req.params.pagina;
+    var paginaActual = (pagina - 1) * cantidadPorPaguina;
+    var consulta = "SELECT * FROM producto LIMIT ?, ?";
+    var consultaTotal = "SELECT count(*) as total FROM producto";
 
     //listar las imagenes con un id igual al del pro
 
-    pool.query('SELECT * FROM producto LIMIT ?, ?', [paginaActual, cantidadPorPaguina], (err, productos) => {
+    POOL.query(consulta, [paginaActual, cantidadPorPaguina], (err, productos) => {
         if (err) {
             res.json(err);
         }
         //consultamos las imagenes del sistema
 
-        pool.query('SELECT count(*) as total FROM producto', (err, cantidad) => {
+        POOL.query(consultaTotal, (err, cantidad) => {
             if (err) {
                 res.json(err);
             }
@@ -44,4 +39,4 @@ indexControler.paginador = (req, res) => {
     });
 }
 
-module.exports = indexControler;
+module.exports = productosControlador;

@@ -8,6 +8,7 @@ function abrirVentana(url) {
 
 //cargamos la paguina de productos
 function cargarPagina(pagina) {
+    
     $.ajax({
         // datos que se envian a traves de ajax
         // archivo que recibe la peticion

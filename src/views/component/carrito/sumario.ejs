@@ -1,10 +1,15 @@
+<% 
+var cantidad = data.length;
+var total = 0;
+data.forEach(element => {
+  total += element.total;
+});
+%> 
 <div class="d-flex flex-row-reverse">
     <div class="card col-md-4">
         <div class="card-body">
-          <p class="card-text">Productos (2): $$$$</p>
-          <p class="card-text">Envio: $$$$</p>
           <hr>
-          <p class="card-text"><h4>$$$$</h4></p>
+          <p class="card-text"><h4 id="sumario-total"></h4></p>
         </div>
       </div>
 </div>

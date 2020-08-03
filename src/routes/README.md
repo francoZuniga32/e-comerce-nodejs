@@ -100,6 +100,31 @@ Mostramos los productos registrados en el sistema.
 
 [none]
 
+## Administracion
+
+estas rutas renderizan las vistas de edicion, los productos, etc'. 
+
+### GET
+
+| Ruta                          | Descripcion                                          |
+| ----------------------------- | ---------------------------------------------------- |
+| /administrar/                 | renderizamos las vistas de la zona de administracion |
+| /administrar/productos/       | mostramos los productos ingresados                   |
+| /administrar/edit/:idproducto | renderizamos la capa de edicion de                   |
+| /administrar/media/           | renderizamos la media de un producto                 |
+
+### POST
+
+| Ruta                        | Descripcion                                   |
+| --------------------------- | --------------------------------------------- |
+| /administrar/editar/        | procesa el fomulario de edicion del producto  |
+| /administrar/agregar/       | procesa el fomulario de agregado de productos |
+| /administrar/eliminar/      | eliminamos el producto indicado               |
+| /administrar/agregarmedia/  | agregamos una imagen adicional al producto    |
+| /administrar/eliminarmedia/ | eliminamos la media indicada del producto     |
+
+
+
 # Routes-EN
 
 The routes used in the aplication are located in this folder, from witch the user vies are render.	

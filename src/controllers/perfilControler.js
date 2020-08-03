@@ -1,20 +1,20 @@
-const pool = require('../baseDeDatos');
-const perfilControler = {};
+const POOL = require('../baseDeDatos');
+const perfilControlador = {};
 
-perfilControler.all = (req, res) => {
+perfilControlador.all = (req, res) => {
     res.render('pefil', { session: req.session.user });
 };
 
-perfilControler.login = (req, res) => {
-    //evaluamos si esta en la session
+perfilControlador.login = (req, res) => {
     res.render('login', { session: req.session.user });
 };
 
-perfilControler.procesarLogin = (req, res) => {
+perfilControlador.procesarLogin = (req, res) => {
     var email = req.body.email;
     var contrasenia = req.body.contrasenia;
+    var consulta = "SELECT * FROM usuario WHERE email = ? AND contrasenia = ?";
 
-    pool.query('SELECT * FROM usuario WHERE email = ? AND contrasenia = ?', [email, contrasenia], (err, usuario) => {
+    POOL.query(consulta, [email, contrasenia], (err, usuario) => {
         if (err) {
             console.log(err);
         }
@@ -34,13 +34,13 @@ perfilControler.procesarLogin = (req, res) => {
     });
 };
 
-perfilControler.registro = (req, res)=>{
+perfilControlador.registro = (req, res)=>{
     var session = req.session.user;
 
     res.render('registro', {session: session});
 }
 
-perfilControler.procesarRegistro = (req, res)=>{
+perfilControlador.procesarRegistro = (req, res)=>{
     var session = req.session.user;
 
     var email = req.body.email;
@@ -48,7 +48,7 @@ perfilControler.procesarRegistro = (req, res)=>{
     var consulta = "INSERT INTO `usuario`(`idUsuario`, `email`, `contrasenia`, `tipo`) VALUES (NULL,?,?,'normal')";
     
     console.log(contrasenia);
-    pool.query(consulta, [email, contrasenia], (err, usuario)=>{
+    POOL.query(consulta, [email, contrasenia], (err, usuario)=>{
         if(err){
             console.log(err);
         }
@@ -56,11 +56,11 @@ perfilControler.procesarRegistro = (req, res)=>{
     });
 }
 
-perfilControler.salir = (req, res) => {
+perfilControlador.salir = (req, res) => {
     //eliminamos la session
     req.session.user = undefined;
     console.log(req.session.iduser);
     res.redirect('/');
 };
 
-module.exports = perfilControler;
+module.exports = perfilControlador;

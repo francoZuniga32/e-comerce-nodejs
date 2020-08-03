@@ -2,23 +2,25 @@
 <html lang="en">
 <%- include('component/utilidades/header');%>
 <%- include('component/utilidades/navegador');%>
+<%if(data){
+    var i = 0;
+    var longitud = data.length;
+%>
 <script src="/Js/carrito.js"></script>
-        <body>
-            <div class="container justify-content-end">
-                <% 
-        if(data){
-        var i = 0;
-            
-            while(i < data.length){  %>
-                    <%- include('component/carrito/item', {data: data[i]});%>
-                        <% i++; 
-            }   
+    <body onload="actualizarSumario(<%= longitud %>);">
+    <div class="container justify-content-end">
+    <%
+        while(i < data.length){  %>
+            <%- include('component/carrito/item', {data: data[i], indice: i, longitud: longitud});%>
+            <% i++; 
         }%>
-            </div>
-            <script>
-                $("input[type='number']").inputSpinner();
-            </script>
-            <%- include('component/utilidades/footer');%>
-        </body>
-
+    <%- include('component/carrito/sumario', {data: data}); %>
+    </div>
+    </body>
+    <%}else{%>
+    <body>
+        
+    </body>
+    <%}%>
+    <%- include('component/utilidades/footer');%>
 </html>

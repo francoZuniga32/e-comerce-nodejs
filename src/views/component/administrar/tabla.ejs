@@ -1,0 +1,23 @@
+<table class="table">
+    <thead class="w-100">
+      <tr>
+        <th scope="col">#ID</th>
+        <th scope="col">Nombre</th>
+        <th scope="col">Precio</th>
+        <th scope="col">Stock</th>
+        <th class="col">Descripcion</th>
+        <th class="col">tipo</th>
+        <th class="col">Media</th>
+        <th class="col">Imagenes</th>
+        <th class="col">Editar</th>
+        <th class="col">Eliminar</th>
+      </tr>
+    </thead>
+    <tbody>
+        <% if(productos){ 
+            productos.forEach(producto => { %>
+                <%- include('tr', {producto: producto}) %>   
+            <% });%>
+        <% } %> 
+    </tbody>
+</table>

@@ -1,6 +1,5 @@
 const session = {};
 
-
 session.all = (req, res, next) => {
     //si existe la session no hacemos nada
     console.log(req.session.user);

@@ -1,26 +1,28 @@
-const productoControler = {};
-const pool = require('../baseDeDatos');
+const productoControlador = {};
+const POOL = require('../baseDeDatos');
 
-const mercadopago = require('mercadopago');
+const mercadoPago = require('mercadopago');
 const session = require('express-session');
-const configMercadoPago = require('../config.json').mercadopago;
+const CONFIG_MERCADO_PAGO = require('../config.json').mercadopago;
 
-mercadopago.configure({
+mercadoPago.configure({
   sandbox: true,
-  access_token: configMercadoPago.token,
-  client_id: configMercadoPago.client_id,
-  client_secret: configMercadoPago.client_secret
+  access_token: CONFIG_MERCADO_PAGO.token,
+  client_id: CONFIG_MERCADO_PAGO.client_id,
+  client_secret: CONFIG_MERCADO_PAGO.client_secret
 });
 
 
-productoControler.all = (req, res) => {
+productoControlador.all = (req, res) => {
+  var consulta = "SELECT * FROM producto WHERE idProducto = ?";
+  var consultaMedia = "SELECT * FROM media WHERE idProducto = ? ";
 
   console.log(session);
-  pool.query('SELECT * FROM producto WHERE idProducto = ?', [req.params.idproducto], (err, producto) => {
+  POOL.query(consulta, [req.params.idproducto], (err, producto) => {
     if (err) {
       console.log(err);
     }
-    pool.query('SELECT * FROM media WHERE idProducto = ? ', [req.params.idproducto], (err, media) => {
+    POOL.query(consultaMedia, [req.params.idproducto], (err, media) => {
       if (err) {
         res.json(err);
       }
@@ -31,7 +33,7 @@ productoControler.all = (req, res) => {
   });
 };
 
-productoControler.pagar = (req, res) => {
+productoControlador.pagar = (req, res) => {
 
   var nombre = req.body.nombre;
   var cantidad = parseInt(req.body.cantidad, 10);
@@ -61,10 +63,10 @@ productoControler.pagar = (req, res) => {
 
   console.log(preference);
 
-  mercadopago.preferences.create(preference).then(function (mpResponse) {
+  mercadoPago.preferences.create(preference).then(function (mpResponse) {
     console.log(mpResponse);
     res.redirect(mpResponse.body.init_point);
   });
 };
 
-module.exports = productoControler;
+module.exports = productoControlador;

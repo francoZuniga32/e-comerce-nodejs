@@ -2,9 +2,9 @@ const mysql = require('mysql');
 const util = require('util');
 const { database } = require('./kays');
 
-const pool = mysql.createPool(database);
+const POOL = mysql.createPool(database);
 
-pool.getConnection((err, conn)=>{
+POOL.getConnection((err, conn)=>{
     if(err){
         if(err.code === 'PROTOCOL_CONNECTION_LOST'){
             console.error("LA CONECCION CON LA BASE DE DATOS FUE CERRADA!!");
@@ -24,6 +24,6 @@ pool.getConnection((err, conn)=>{
 });
 
 //ahora las cueris pueden usar promesas
-pool.query = util.promisify(pool.query);
+POOL.query = util.promisify(POOL.query);
 
-module.exports = pool;
+module.exports = POOL;

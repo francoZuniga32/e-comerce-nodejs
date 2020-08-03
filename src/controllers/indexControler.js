@@ -1,9 +1,9 @@
-const indexControler = {};
-const pool = require('../baseDeDatos');
+const INDEX_CONTROLLER = {};
+const POOL = require('../baseDeDatos');
 
-indexControler.all = (req, res)=>{
+INDEX_CONTROLLER.all = (req, res)=>{
     console.log(req.session.user);
     res.render('index', {session: req.session.user});
 }
 
-module.exports = indexControler;
+module.exports = INDEX_CONTROLLER;

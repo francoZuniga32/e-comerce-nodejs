@@ -1,9 +1,9 @@
 const express = require('express'),
-      path = require('path'),
+      PATH = require('path'),
       morgan = require('morgan'),
       mysql = require('mysql'),
       session = require('express-session'),
-      mercadopago = require('mercadopago'),
+      mercadoPago = require('mercadopago'),
       body_parser = require('body-parser'),
       md5 = require('md5'),
       fileUpload = require('express-fileupload');
@@ -11,11 +11,11 @@ const express = require('express'),
 const app = express();
 
 //configuramos: puerto, renderizador, y las vistas
-path.basename(__dirname);
+PATH.basename(__dirname);
 app.set('port', process.env.PORT || 3000);
-app.set('views', path.join(__dirname, 'views'));
+app.set('views', PATH.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
-app.set('public', path.join(__dirname, 'public'));
+app.set('public', PATH.join(__dirname, 'public'));
 
 // middlewares
 app.use(morgan('dev'));
@@ -31,7 +31,7 @@ app.use(fileUpload({
 }));
 
 //archivos estaticos 
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(PATH.join(__dirname, 'public')));
 
 //las rutas
 app.use('/', require('./routes/index'));
