@@ -1,7 +1,7 @@
 <ul class="pagination">
     <% if(paginacion.paginaActual > 1){ %>
     <li class="page-item">
-        <a class="page-link" onclick="cargarPagina(<%- parseInt(paginacion.paginaActual) - 1 %>)" aria-label="Previous">
+        <a class="page-link" onclick="cargarPagina(<%- parseInt(paginacion.paginaActual)%> - 1 , '<%- paginacion.src %>')" aria-label="Previous">
             <span aria-hidden="true">&laquo;</span>
         </a>
     </li>
@@ -14,16 +14,16 @@
     }
     for(var i = paginacion.total - 2 ; i <= paginacion.total; i++){
         if(i == paginacion.paginaActual){%>
-        <li class="page-item active"><a class="page-link" onclick="cargarPagina(<%- i %>)"><%= i %></a></li>
+        <li class="page-item active"><a class="page-link" onclick="cargarPagina(<%- i %>, '<%- paginacion.src %>')"><%= i %></a></li>
         <%}else{%>
-        <li class="page-item"><a class="page-link" onclick="cargarPagina(<%- i %>)"><%= i %></a></li>
+        <li class="page-item"><a class="page-link" onclick="cargarPagina(<%- i %>, '<%- paginacion.src %>')"><%= i %></a></li>
         <%}%>
     <%}%>
 
     <% if(paginacion.paginaActual < paginacion.total){ %>
         <!-- prev-->
         <li class="page-item">
-            <a class="page-link" onclick="cargarPagina(<%- parseInt(paginacion.paginaActual) + 1 %>)" aria-label="Next">
+            <a class="page-link" onclick="cargarPagina(<%- parseInt(paginacion.paginaActual) + 1 %>, '<%- paginacion.src %>')" aria-label="Next">
                 <span aria-hidden="true">&raquo;</span>
             </a>
         </li>

@@ -1,11 +1,12 @@
 const carritoRouter = require('express').Router();
 
-const carritoControler = require('../controllers/carritoControler');
+const carritoControlador = require('../controllers/carritoControler');
 
 carritoRouter.use(require('../middleware/session').all);
-carritoRouter.get('/', carritoControler.all);
-carritoRouter.post('/cargar/:idproducto', carritoControler.add);
-carritoRouter.post('/remover/', carritoControler.remove);
-carritoRouter.post('/incrementar/', carritoControler.incrementar);
+carritoRouter.get('/', carritoControlador.all);
+carritoRouter.get('/comprar', carritoControlador.comprar);
+carritoRouter.post('/cargar/:idproducto', carritoControlador.add);
+carritoRouter.post('/remover/', carritoControlador.remove);
+carritoRouter.post('/incrementar/', carritoControlador.incrementar);
 
 module.exports = carritoRouter;

@@ -5,10 +5,10 @@
         <% if (data) { %>
             <% for(var i = 0; i < data.length; i++) { %>
                 <%- include('card', {data: data[i], indice: i, media: data[i]['media'], session: session}); %>
-                    <% } %>
-                        <% } %>
+            <% } %>
+        <% } %>
     </div>
 </div>
 <% if(paginacion){ %>
     <%- include('../paginador/paginador', {paginacion: paginacion}); %>
-        <% } %>
+<% } %>

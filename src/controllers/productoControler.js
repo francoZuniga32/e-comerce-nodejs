@@ -5,14 +5,6 @@ const mercadoPago = require('mercadopago');
 const session = require('express-session');
 const CONFIG_MERCADO_PAGO = require('../config.json').mercadopago;
 
-mercadoPago.configure({
-  sandbox: true,
-  access_token: CONFIG_MERCADO_PAGO.token,
-  client_id: CONFIG_MERCADO_PAGO.client_id,
-  client_secret: CONFIG_MERCADO_PAGO.client_secret
-});
-
-
 productoControlador.all = (req, res) => {
   var consulta = "SELECT * FROM producto WHERE idProducto = ?";
   var consultaMedia = "SELECT * FROM media WHERE idProducto = ? ";

@@ -1,6 +1,17 @@
 const carritoControlador = {};
 const POOL = require('../baseDeDatos');
-const { end } = require('../baseDeDatos');
+
+const mercadoPago = require('mercadopago');
+const session = require('express-session');
+const CONFIG_MERCADO_PAGO = require('../config.json').mercadopago;
+
+mercadoPago.configure({
+    sandbox: true,
+    access_token: CONFIG_MERCADO_PAGO.token,
+    client_id: CONFIG_MERCADO_PAGO.client_id,
+    client_secret: CONFIG_MERCADO_PAGO.client_secret
+});
+
 
 carritoControlador.all = (req, res) => {
     var session = req.session.user;
@@ -23,7 +34,7 @@ carritoControlador.all = (req, res) => {
 carritoControlador.add = (req, res) => {
     var session = req.session.user;
     var producto = req.params.idproducto;
-    var consultaExistencia =  "SELECT count(*) FROM carrito WHERE idUsuario = ? AND idProducto = ?";
+    var consultaExistencia = "SELECT count(*) FROM carrito WHERE idUsuario = ? AND idProducto = ?";
     var consultaCarrito = "INSERT INTO carrito(`idUsuario`, `idProducto`, `cantidad`) VALUES (?,?,'1')";
 
     //evaluamos si hay una session iniciada en caso contrario los redireccionamos al inicio
@@ -75,7 +86,7 @@ carritoControlador.remove = (req, res) => {
     });
 };
 
-carritoControlador.incrementar = (req, res)=>{
+carritoControlador.incrementar = (req, res) => {
     var session = req.session.user;
     var idproducto = req.body.idprducto;
     var cantidad = req.body.cantidad;
@@ -83,11 +94,47 @@ carritoControlador.incrementar = (req, res)=>{
 
     console.log(idproducto, session, cantidad);
 
-    POOL.query(consultaIncremento ,[cantidad, session.iduser, idproducto], (err, carrito)=>{
-        if(err){
+    POOL.query(consultaIncremento, [cantidad, session.iduser, idproducto], (err, carrito) => {
+        if (err) {
             console.log(err);
         }
         res.status(200).end();
+    });
+};
+
+carritoControlador.comprar = async (req, res) => {
+    var idusuario = req.session.user.iduser;
+    var consultaCompra = "SELECT * FROM carrito, producto WHERE carrito.idProducto = producto.idProducto AND carrito.idUsuario = ?";
+    var preference = {
+        items: [],
+        back_urls: {
+            "success": "http://localhost:3000/compra/success",
+            "failure": "http://localhost:3000/compra/failure",
+            "pending": "http://localhost:3000/compra/pending"
+        },
+        shipments: {
+            "mode": "custom"
+        },
+        auto_return: "approved"
+    };
+
+    var producto = await POOL.query(consultaCompra, [idusuario]);
+    producto.forEach(element => {
+        var nombre = element.nombre;
+        var cantidad = element.cantidad;
+        var precio = element.precio;
+
+        preference.items.push({
+            title: nombre,
+            quantity: cantidad,
+            currency_id: 'ARS',
+            unit_price: precio
+        });
+    });
+
+    mercadoPago.preferences.create(preference).then(function (mpResponse) {
+        console.log(mpResponse);
+        res.redirect(mpResponse.body.init_point);
     });
 };
 
