@@ -43,25 +43,25 @@ productosControlador.paginador = (req, res) => {
 
 productosControlador.buscar = (req, res)=>{
     var busqueda = req.query.busqueda;
-    var pagina = req.query.pagina;
+    var pagina = req.query.pagina || 1;
     var paginaActual = (pagina - 1) * cantidadPorPaguina;
     var consulta = "SELECT * FROM producto WHERE producto.nombre LIKE ? or producto.tipo LIKE ? LIMIT ?, ?";
-    var consultaTotal = "SELECT count(*) as total producto WHERE producto.nombre LIKE ? or producto.tipo LIKE ?";
+    var consultaTotal = "SELECT count(*) as total FROM producto WHERE producto.nombre LIKE ? or producto.tipo LIKE ?";
 
-    POOL.query(consulta, [paginaActual, cantidadPorPaguina], (err, productos) => {
+    POOL.query(consulta, [`%${busqueda}%`, `%${busqueda}%`, paginaActual, cantidadPorPaguina], (err, productos) => {
         if (err) {
             res.json(err);
         }
         //consultamos las imagenes del sistema
 
-        POOL.query(consultaTotal, (err, cantidad) => {
+        POOL.query(consultaTotal, [`%${busqueda}%`, `%${busqueda}%`], (err, cantidad) => {
             if (err) {
                 res.json(err);
             }
 
             let totalpaginas = Math.round(cantidad[0].total / cantidadPorPaguina);
             console.log("paginacion: totalproductos:" + cantidad[0].total + " total:" + totalpaginas + " pagina acutual: " + pagina);
-            res.render('component/productos/productos', {
+            res.render('busqueda', {
                 data: productos,
                 paginacion: {
                     total: totalpaginas,

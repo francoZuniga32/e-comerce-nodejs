@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('component/utilidades/header');%>
+    <link rel="stylesheet" href="/css/productos.css">
+    <%- include('component/utilidades/navegador',{session:session});%>
+    <script src="/Js/carrito.js"></script>
+    <body onload="cargarPagina('<%- pagination.url %>')">
+        <div class="container contenido" id="productos">
+            <div class="row row-cols-1 row-cols-md-4">
+                <% if (data) { %>
+                    <% for(var i = 0; i < data.length; i++) { %>
+                        <%- include('component/productos/card', {data: data[i], indice: i, media: data[i]['media'], session: session}); %>
+                    <% } %>
+                <% } %>
+            </div>
+            <% if(paginacion){ %>
+                <%- include('component/paginador/paginador', {paginacion: paginacion}); %>
+            <% } %>
+        </div>
+        <%- include('component/utilidades/footer');%>
+    </body>
+    <script>
+    </script>
+</html>

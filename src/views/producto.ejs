@@ -11,8 +11,7 @@
                             <div class="col-md-4">
                                 <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
                                     <div class="carousel-inner ">
-                                        <% 
-                        if( data[0].media != ""){ %>
+                                        <%if( data[0].media != ""){ %>
                                             <div class="carousel-item active">
                                                 <img src="<%= data[0].media %>" class="d-block card-img" alt="...">
                                             </div>
@@ -22,13 +21,13 @@
                                                 </div>
                                                 <% }
                         
-                        if(media.length > 0){
-                          for(var j = 1; j < media.length; j++){ %>
-                                                    <div class="carousel-item">
-                                                        <img src="/<%- media[j]['url'] %>" class="d-block card-img" alt="...">
-                                                    </div>
-                                                    <% } 
-                        } %>
+                                            if(media.length > 0){
+                                            for(var j = 1; j < media.length; j++){ %>
+                                                <div class="carousel-item">
+                                                    <img src="/<%- media[j]['url'] %>" class="d-block card-img" alt="...">
+                                                </div>
+                                                <% } 
+                                            } %>
                                     </div>
                                     <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
                                         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -64,29 +63,29 @@
                                 </div>
                                 <div class="col card-footer h-25">
                                     <div class="btn-group rounded-0" role="group" aria-label="Third group">
-                                        <%if(session.nombre != "none" && session.tipo != "none" && session.iduser != "none"){%>
+                                        <%if(typeof(session) != "undefined"){%>
                                             <button type="button" class="btn btn-ligth-" data-toggle="modal" data-target="#favoritos">
-                            <i class="material-icons">
-                                favorite_border
-                            </i>                              
-                          </button>
-                                            <button type="button" class="btn btn-ligth" onclick="addcarrito(<%= data[0].idProducto %>)">
-                              <i class="material-icons">
-                                add_shopping_cart
-                              </i>
-                          </button>
-                                            <%}else{%>
-                                                <a type="button" class="btn btn-ligth" href="">
-                                                    <i class="material-icons">
-                                favorite_border
-                            </i>
-                                                </a>
-                                                <a type="button" class="btn btn-ligth" href="">
-                                                    <i class="material-icons">
-                              add_shopping_cart
-                              </i>
-                                                </a>
-                                                <%}%>
+                                            <i class="material-icons">
+                                                favorite_border
+                                            </i>                              
+                                        </button>
+                                        <button type="button" class="btn btn-ligth" onclick="addcarrito(<%= data[0].idProducto %>)">
+                                            <i class="material-icons">
+                                                add_shopping_cart
+                                            </i>
+                                        </button>
+                                        <%}else{%>
+                                            <a type="button" class="btn btn-ligth" href="">
+                                                <i class="material-icons">
+                                                favorite_border
+                                            </i>
+                                            </a>
+                                            <a type="button" class="btn btn-ligth" href="">
+                                                <i class="material-icons">
+                                                    add_shopping_cart
+                                                </i>
+                                            </a>
+                                        <%}%>
                                     </div>
 
                                     <% if(data[0].stock >= 1){ %>
@@ -106,8 +105,8 @@
                                         <div class="modal-header">
                                             <h5 class="modal-title" id="exampleModalLabel">Comprar</h5>
                                             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                      <span aria-hidden="true">&times;</span>
-                    </button>
+                                            <span aria-hidden="true">&times;</span>
+                                            </button>
                                         </div>
                                         <div class="modal-body">
                                             <div class="row">
@@ -117,9 +116,9 @@
                                                         <div class="col-md-4">
                                                             <% if(media.length < 0){ %>
                                                                 <img src="<%- media[0]['url'] %>" class="card-img" alt="...">
-                                                                <% }else{ %>
-                                                                    <img src="/Media/ing.webp" class="card-img" alt="...">
-                                                                    <% } %>
+                                                            <% }else{ %>
+                                                                <img src="/Media/ing.webp" class="card-img" alt="...">
+                                                            <% } %>
                                                         </div>
                                                         <div class="col-md-8">
                                                             <div class="card-body">
@@ -159,8 +158,8 @@
                                         <div class="modal-header">
                                             <h5 class="modal-title" id="exampleModalLabel">Favoritos</h5>
                                             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                      <span aria-hidden="true">&times;</span>
-                    </button>
+                                            <span aria-hidden="true">&times;</span>
+                                            </button>
                                         </div>
                                         <div class="modal-body">
                                             <div class="row">
@@ -170,9 +169,9 @@
                                                         <div class="col-md-4">
                                                             <% if(media.length < 0){ %>
                                                                 <img src="<%- media[0]['url'] %>" class="card-img" alt="...">
-                                                                <% }else{ %>
-                                                                    <img src="/Media/ing.webp" class="card-img" alt="...">
-                                                                    <% } %>
+                                                            <% }else{ %>
+                                                                <img src="/Media/ing.webp" class="card-img" alt="...">
+                                                            <% } %>
                                                         </div>
                                                         <div class="col-md-8">
                                                             <div class="card-body">
@@ -200,10 +199,9 @@
                                 </form>
                             </div>
                         </div>
-                        <% } %>
+                    <% } %>
                 </div>
             </div>
         </body>
         <%- include('component/utilidades/footer');%>
-
 </html>

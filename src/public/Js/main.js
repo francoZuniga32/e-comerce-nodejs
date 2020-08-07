@@ -1,5 +1,5 @@
-function abrir(idProducto) {
-    window.open("/producto/" + idProducto, "_self");
+function abrir(url, method) {
+    window.open(url, method);
 }
 
 function abrirVentana(url) {
@@ -7,6 +7,6 @@ function abrirVentana(url) {
 }
 
 //cargamos la paguina de productos
-function cargarPagina(pagina, url) {
-    ajaxCargar({}, `${url}${pagina}`, 'get', Promise.resolve('#productos'));
+function cargarPagina(url) {
+    ajaxCargar({}, url, 'get', Promise.resolve('#productos'));
 }

@@ -2,20 +2,20 @@
     <% if(paginacion.paginaActual > 1){ %>
         <!-- prev-->
         <li class="page-item">
-            <a class="page-link" onclick="cargarPagina(<%- parseInt(paginacion.paginaActual) - 1 %>, '<%- paginacion.src %>')" aria-label="Previous">
+            <a class="page-link" onclick="cargarPagina('<%- paginacion.src %><%- parseInt(paginacion.paginaActual) - 1 %>')" aria-label="Previous">
                 <span aria-hidden="true">&laquo;</span>
             </a>
         </li>
     <%}%>
 
-        <li class="page-item"><a class="page-link" onclick="cargarPagina(<%- parseInt(paginacion.paginaActual)-1 %>, '<%- paginacion.src %>')"><%= parseInt(paginacion.paginaActual)-1 %></a></li>
-        <li class="page-item active"><a class="page-link" onclick="cargarPagina(<%- parseInt(paginacion.paginaActual)%>, '<%- paginacion.src %>')"><%= paginacion.paginaActual %></a></li>
-        <li class="page-item"><a class="page-link" onclick="cargarPagina(<%- parseInt(paginacion.paginaActual) + 1 %>, '<%- paginacion.src %>')"><%= parseInt(paginacion.paginaActual)+1 %></a></li>
+        <li class="page-item"><a class="page-link" onclick="cargarPagina('<%- paginacion.src %><%- parseInt(paginacion.paginaActual)-1 %>')"><%= parseInt(paginacion.paginaActual)-1 %></a></li>
+        <li class="page-item active"><a class="page-link" onclick="cargarPagina('<%- paginacion.src %><%- parseInt(paginacion.paginaActual)%>')"><%= paginacion.paginaActual %></a></li>
+        <li class="page-item"><a class="page-link" onclick="cargarPagina('<%- paginacion.src %><%- parseInt(paginacion.paginaActual) + 1 %>')"><%= parseInt(paginacion.paginaActual)+1 %></a></li>
 
     <% if(paginacion.paginaActual < paginacion.total){ %>
         <!-- prev-->
         <li class="page-item">
-            <a class="page-link" onclick="cargarPagina(<%- parseInt(paginacion.paginaActual) + 1 %>,'<%- paginacion.src %>')" aria-label="Next">
+            <a class="page-link" onclick="cargarPagina('<%- paginacion.src %><%- parseInt(paginacion.paginaActual) + 1 %>')" aria-label="Next">
                 <span aria-hidden="true">&raquo;</span>
             </a>
         </li>

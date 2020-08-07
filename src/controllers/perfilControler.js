@@ -63,4 +63,8 @@ perfilControlador.salir = (req, res) => {
     res.redirect('/');
 };
 
+perfilControlador.procesarCompra = (req, res)=>{
+    console.log(req.query);
+};
+
 module.exports = perfilControlador;
