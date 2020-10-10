@@ -1,0 +1,229 @@
+[33m[nodemon] 2.0.4[39m
+[33m[nodemon] to restart at any time, enter `rs`[39m
+[33m[nodemon] watching path(s): *.*[39m
+[33m[nodemon] watching extensions: js,mjs,json[39m
+[32m[nodemon] starting `node src/index.js`[39m
+server on port 3000
+la base de datos fue conectada!!
+undefined
+[0mGET /carrito [36m302[0m 48.155 ms - 46[0m
+undefined
+[0mGET / [36m304[0m 12.634 ms - -[0m
+[0mGET /css/main.css [36m304[0m 7.735 ms - -[0m
+[0mGET /slick/slick.css [36m304[0m 7.156 ms - -[0m
+[0mGET /slick/slick-theme.css [36m304[0m 7.169 ms - -[0m
+[0mGET /css/slik.css [36m304[0m 7.171 ms - -[0m
+[0mGET /Js/main.js [36m304[0m 7.246 ms - -[0m
+[0mGET /Js/bootstrap-input-spinner.js [36m304[0m 7.469 ms - -[0m
+[0mGET /Js/ajax.js [36m304[0m 0.927 ms - -[0m
+[0mGET /Media/logo.png [33m404[0m 3.142 ms - 153[0m
+[0mGET /perfil/login [36m304[0m 25.703 ms - -[0m
+[0mGET /css/main.css [36m304[0m 4.751 ms - -[0m
+[0mGET /Js/main.js [36m304[0m 6.811 ms - -[0m
+[0mGET /Js/bootstrap-input-spinner.js [36m304[0m 10.096 ms - -[0m
+[0mGET /slick/slick.css [36m304[0m 7.394 ms - -[0m
+[0mGET /slick/slick-theme.css [36m304[0m 16.433 ms - -[0m
+[0mGET /css/slik.css [36m304[0m 21.778 ms - -[0m
+[0mGET /Js/ajax.js [36m304[0m 25.787 ms - -[0m
+[0mGET /Js/validarfomulario.js [36m304[0m 25.427 ms - -[0m
+[0mGET /Js/jquery.sha256.js [36m304[0m 24.916 ms - -[0m
+iduser:undefined
+[0mPOST /perfil/login/procesar [36m302[0m 23.787 ms - 58[0m
+[0mGET /perfil [36m304[0m 3.044 ms - -[0m
+[0mGET /css/main.css [36m304[0m 4.913 ms - -[0m
+[0mGET /slick/slick.css [36m304[0m 14.148 ms - -[0m
+[0mGET /Js/ajax.js [36m304[0m 10.994 ms - -[0m
+[0mGET /slick/slick-theme.css [36m304[0m 14.914 ms - -[0m
+[0mGET /css/slik.css [36m304[0m 15.959 ms - -[0m
+[0mGET /Js/main.js [36m304[0m 22.042 ms - -[0m
+[0mGET /Js/bootstrap-input-spinner.js [36m304[0m 22.646 ms - -[0m
+[0mGET /Media/logo.png [33m404[0m 1.239 ms - 153[0m
+[0mGET /productos [32m200[0m 8.112 ms - 4881[0m
+[0mGET /css/main.css [36m304[0m 1.300 ms - -[0m
+[0mGET /slick/slick.css [36m304[0m 12.864 ms - -[0m
+[0mGET /slick/slick-theme.css [36m304[0m 10.873 ms - -[0m
+[0mGET /css/slik.css [36m304[0m 11.321 ms - -[0m
+[0mGET /css/productos.css [36m304[0m 11.174 ms - -[0m
+[0mGET /Js/main.js [36m304[0m 11.039 ms - -[0m
+[0mGET /Js/bootstrap-input-spinner.js [36m304[0m 10.910 ms - -[0m
+[0mGET /Js/ajax.js [36m304[0m 3.218 ms - -[0m
+[0mGET /Js/carrito.js [36m304[0m 0.976 ms - -[0m
+[0mGET /Media/logo.png [33m404[0m 1.684 ms - 153[0m
+paginacion: totalproductos:7 total:7 pagina acutual: 1
+[0mGET /productos/pagina/1?_=1602287142174 [32m200[0m 41.827 ms - 2578[0m
+[0mGET /Js/favoritos.js [36m304[0m 0.846 ms - -[0m
+[0mGET /Js/carrito.js [36m304[0m 0.742 ms - -[0m
+[0mGET /Media/productos/pexels-alex-andrews-821651%20(1).jpg [33m404[0m 1.364 ms - 191[0m
+{ iduser: 2, nombre: 'admin@gmail.com.ar', tipo: 'admin' }
+[0mGET / [32m200[0m 32.335 ms - 6247[0m
+[0mGET /css/main.css [36m304[0m 10.019 ms - -[0m
+[0mGET /slick/slick.css [36m304[0m 14.866 ms - -[0m
+[0mGET /slick/slick-theme.css [36m304[0m 20.087 ms - -[0m
+[0mGET /Js/main.js [36m304[0m 21.251 ms - -[0m
+[0mGET /Js/bootstrap-input-spinner.js [36m304[0m 24.491 ms - -[0m
+[0mGET /css/slik.css [36m304[0m 28.759 ms - -[0m
+[0mGET /Js/ajax.js [36m304[0m 12.155 ms - -[0m
+[0mGET /Media/logo.png [33m404[0m 1.750 ms - 153[0m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node src/index.js`[39m
+server on port 3000
+la base de datos fue conectada!!
+undefined
+[0mGET / [32m200[0m 32.535 ms - 6052[0m
+[0mGET /css/main.css [36m304[0m 4.233 ms - -[0m
+[0mGET /slick/slick.css [36m304[0m 9.677 ms - -[0m
+[0mGET /slick/slick-theme.css [36m304[0m 10.791 ms - -[0m
+[0mGET /css/slik.css [36m304[0m 14.270 ms - -[0m
+[0mGET /Js/main.js [36m304[0m 18.833 ms - -[0m
+[0mGET /Js/bootstrap-input-spinner.js [36m304[0m 24.394 ms - -[0m
+[0mGET /Js/ajax.js [36m304[0m 29.944 ms - -[0m
+[0mGET /Media/logo.png [33m404[0m 3.842 ms - 153[0m
+[0mGET /perfil/login [36m304[0m 9.751 ms - -[0m
+[0mGET /css/main.css [36m304[0m 0.901 ms - -[0m
+[0mGET /slick/slick.css [36m304[0m 3.036 ms - -[0m
+[0mGET /slick/slick-theme.css [36m304[0m 5.376 ms - -[0m
+[0mGET /css/slik.css [36m304[0m 6.002 ms - -[0m
+[0mGET /Js/main.js [36m304[0m 9.642 ms - -[0m
+[0mGET /Js/bootstrap-input-spinner.js [36m304[0m 11.382 ms - -[0m
+[0mGET /Js/ajax.js [36m304[0m 14.091 ms - -[0m
+[0mGET /Js/validarfomulario.js [36m304[0m 17.344 ms - -[0m
+[0mGET /Js/jquery.sha256.js [36m304[0m 8.536 ms - -[0m
+iduser:undefined
+[0mPOST /perfil/login/procesar [36m302[0m 35.992 ms - 58[0m
+[0mGET /perfil [36m304[0m 6.124 ms - -[0m
+[0mGET /css/main.css [36m304[0m 1.577 ms - -[0m
+[0mGET /slick/slick.css [36m304[0m 0.965 ms - -[0m
+[0mGET /slick/slick-theme.css [36m304[0m 5.839 ms - -[0m
+[0mGET /css/slik.css [36m304[0m 11.089 ms - -[0m
+[0mGET /Js/main.js [36m304[0m 17.242 ms - -[0m
+[0mGET /Js/bootstrap-input-spinner.js [36m304[0m 19.385 ms - -[0m
+[0mGET /Js/ajax.js [36m304[0m 22.380 ms - -[0m
+[0mGET /Media/logo.png [33m404[0m 1.675 ms - 153[0m
+{ iduser: 2, nombre: 'admin@gmail.com.ar', tipo: 'admin' }
+[0mGET / [32m200[0m 38.674 ms - 6247[0m
+[0mGET /css/main.css [36m304[0m 1.128 ms - -[0m
+[0mGET /slick/slick.css [36m304[0m 9.551 ms - -[0m
+[0mGET /slick/slick-theme.css [36m304[0m 13.188 ms - -[0m
+[0mGET /css/slik.css [36m304[0m 11.357 ms - -[0m
+[0mGET /Js/main.js [36m304[0m 11.834 ms - -[0m
+[0mGET /Js/bootstrap-input-spinner.js [36m304[0m 12.012 ms - -[0m
+[0mGET /Js/ajax.js [36m304[0m 12.097 ms - -[0m
+[0mGET /Media/logo.png [33m404[0m 1.346 ms - 153[0m
+{ iduser: 2, nombre: 'admin@gmail.com.ar', tipo: 'admin' }
+[0mGET / [36m304[0m 4.508 ms - -[0m
+[0mGET /css/main.css [36m304[0m 2.958 ms - -[0m
+[0mGET /slick/slick.css [36m304[0m 7.089 ms - -[0m
+[0mGET /slick/slick-theme.css [36m304[0m 1.270 ms - -[0m
+[0mGET /css/slik.css [36m304[0m 1.102 ms - -[0m
+[0mGET /Js/main.js [36m304[0m 2.138 ms - -[0m
+[0mGET /Js/bootstrap-input-spinner.js [36m304[0m 8.178 ms - -[0m
+[0mGET /Js/ajax.js [36m304[0m 3.846 ms - -[0m
+[0mGET /Media/logo.png [33m404[0m 1.279 ms - 153[0m
+[0mGET /productos [36m304[0m 6.465 ms - -[0m
+[0mGET /css/main.css [36m304[0m 15.053 ms - -[0m
+[0mGET /slick/slick.css [36m304[0m 17.784 ms - -[0m
+[0mGET /slick/slick-theme.css [36m304[0m 21.394 ms - -[0m
+[0mGET /css/slik.css [36m304[0m 28.513 ms - -[0m
+[0mGET /css/productos.css [36m304[0m 31.616 ms - -[0m
+[0mGET /Js/main.js [36m304[0m 54.040 ms - -[0m
+[0mGET /Js/bootstrap-input-spinner.js [36m304[0m 3.218 ms - -[0m
+[0mGET /Js/ajax.js [36m304[0m 10.462 ms - -[0m
+[0mGET /Js/carrito.js [36m304[0m 6.319 ms - -[0m
+[0mGET /Media/logo.png [33m404[0m 1.103 ms - 153[0m
+paginacion: totalproductos:7 total:7 pagina acutual: 1
+[0mGET /productos/pagina/1?_=1602288454414 [32m200[0m 56.357 ms - 2578[0m
+[0mGET /Js/favoritos.js [36m304[0m 0.963 ms - -[0m
+[0mGET /Js/carrito.js [36m304[0m 1.571 ms - -[0m
+[0mGET /Media/productos/pexels-alex-andrews-821651%20(1).jpg [33m404[0m 1.415 ms - 191[0m
+[0mGET /productos [36m304[0m 5.482 ms - -[0m
+[0mGET /css/main.css [36m304[0m 1.056 ms - -[0m
+[0mGET /slick/slick.css [36m304[0m 1.095 ms - -[0m
+[0mGET /slick/slick-theme.css [36m304[0m 1.559 ms - -[0m
+[0mGET /css/slik.css [36m304[0m 1.519 ms - -[0m
+[0mGET /Js/main.js [36m304[0m 5.138 ms - -[0m
+[0mGET /Js/bootstrap-input-spinner.js [36m304[0m 7.289 ms - -[0m
+[0mGET /css/productos.css [36m304[0m 12.046 ms - -[0m
+[0mGET /Js/ajax.js [36m304[0m 15.724 ms - -[0m
+[0mGET /Media/logo.png [33m404[0m 1.980 ms - 153[0m
+[0mGET /Js/carrito.js [36m304[0m 5.818 ms - -[0m
+paginacion: totalproductos:7 total:7 pagina acutual: 1
+[0mGET /productos/pagina/1?_=1602288455445 [32m200[0m 31.634 ms - 2578[0m
+[0mGET /Js/favoritos.js [36m304[0m 0.852 ms - -[0m
+[0mGET /Js/carrito.js [36m304[0m 1.425 ms - -[0m
+[0mGET /Media/productos/pexels-alex-andrews-821651%20(1).jpg [33m404[0m 2.150 ms - 191[0m
+[0mGET /productos [36m304[0m 5.729 ms - -[0m
+[0mGET /css/main.css [36m304[0m 1.241 ms - -[0m
+[0mGET /Js/main.js [36m304[0m 10.302 ms - -[0m
+[0mGET /slick/slick.css [36m304[0m 12.698 ms - -[0m
+[0mGET /slick/slick-theme.css [36m304[0m 14.272 ms - -[0m
+[0mGET /css/slik.css [36m304[0m 20.575 ms - -[0m
+[0mGET /css/productos.css [36m304[0m 24.305 ms - -[0m
+[0mGET /Js/ajax.js [36m304[0m 18.313 ms - -[0m
+[0mGET /Js/bootstrap-input-spinner.js [36m304[0m 24.231 ms - -[0m
+[0mGET /Media/logo.png [33m404[0m 2.232 ms - 153[0m
+[0mGET /Js/carrito.js [36m304[0m 5.868 ms - -[0m
+paginacion: totalproductos:7 total:7 pagina acutual: 1
+[0mGET /productos/pagina/1?_=1602288456933 [32m200[0m 13.710 ms - 2578[0m
+[0mGET /Js/favoritos.js [36m304[0m 2.471 ms - -[0m
+[0mGET /Js/carrito.js [36m304[0m 0.728 ms - -[0m
+[0mGET /Media/productos/pexels-alex-andrews-821651%20(1).jpg [33m404[0m 2.071 ms - 191[0m
+paginacion: totalproductos:7 total:7 pagina acutual: 2
+[0mGET /productos/pagina/2?_=1602288456934 [32m200[0m 22.855 ms - 2829[0m
+[0mGET /Js/favoritos.js [36m304[0m 2.297 ms - -[0m
+[0mGET /Js/carrito.js [36m304[0m 1.483 ms - -[0m
+[0mGET /Media/productos/pexels-abhishek-saini-2929411.jpg [33m404[0m 1.688 ms - 188[0m
+paginacion: totalproductos:7 total:7 pagina acutual: 3
+[0mGET /productos/pagina/3?_=1602288456935 [32m200[0m 17.644 ms - 2793[0m
+[0mGET /Js/favoritos.js [36m304[0m 1.041 ms - -[0m
+[0mGET /Js/carrito.js [36m304[0m 0.691 ms - -[0m
+[0mGET /Media/productos/pexels-felipe-parucker-3134214.jpg [33m404[0m 1.319 ms - 189[0m
+paginacion: totalproductos:7 total:7 pagina acutual: 4
+[0mGET /productos/pagina/4?_=1602288456936 [32m200[0m 12.769 ms - 2795[0m
+[0mGET /Js/favoritos.js [36m304[0m 2.399 ms - -[0m
+[0mGET /Js/carrito.js [36m304[0m 1.181 ms - -[0m
+[0mGET /Media/productos/pexels-markus-spiske-3053781%20(1).jpg [33m404[0m 1.418 ms - 193[0m
+paginacion: totalproductos:7 total:7 pagina acutual: 5
+[0mGET /productos/pagina/5?_=1602288456937 [32m200[0m 11.320 ms - 2777[0m
+[0mGET /Js/favoritos.js [36m304[0m 1.456 ms - -[0m
+[0mGET /Js/carrito.js [36m304[0m 2.730 ms - -[0m
+[0mGET /Media/productos/pexels-pixabay-45889.jpg [33m404[0m 2.654 ms - 179[0m
+paginacion: totalproductos:7 total:7 pagina acutual: 6
+[0mGET /productos/pagina/6?_=1602288456938 [32m200[0m 13.392 ms - 2788[0m
+[0mGET /Js/favoritos.js [36m304[0m 0.818 ms - -[0m
+[0mGET /Js/carrito.js [36m304[0m 0.916 ms - -[0m
+[0mGET /Media/productos/pexels-fotografierende-3278760.jpg [33m404[0m 2.065 ms - 189[0m
+paginacion: totalproductos:7 total:7 pagina acutual: 7
+[0mGET /productos/pagina/7?_=1602288456939 [32m200[0m 11.341 ms - 2536[0m
+[0mGET /Js/favoritos.js [36m304[0m 0.927 ms - -[0m
+[0mGET /Js/carrito.js [36m304[0m 1.594 ms - -[0m
+[0mGET /Media/productos/pexels-pixabay-45889.jpg [33m404[0m 2.440 ms - 179[0m
+paginacion: totalproductos:7 total:7 pagina acutual: 6
+[0mGET /productos/pagina/6?_=1602288456940 [32m200[0m 13.953 ms - 2788[0m
+[0mGET /Js/favoritos.js [36m304[0m 1.987 ms - -[0m
+[0mGET /Js/carrito.js [36m304[0m 2.288 ms - -[0m
+[0mGET /Media/productos/pexels-fotografierende-3278760.jpg [33m404[0m 2.411 ms - 189[0m
+paginacion: totalproductos:7 total:7 pagina acutual: 5
+[0mGET /productos/pagina/5?_=1602288456941 [32m200[0m 12.026 ms - 2777[0m
+[0mGET /Js/favoritos.js [36m304[0m 1.571 ms - -[0m
+[0mGET /Js/carrito.js [36m304[0m 1.413 ms - -[0m
+[0mGET /Media/productos/pexels-pixabay-45889.jpg [33m404[0m 2.232 ms - 179[0m
+paginacion: totalproductos:7 total:7 pagina acutual: 4
+[0mGET /productos/pagina/4?_=1602288456942 [32m200[0m 11.282 ms - 2795[0m
+[0mGET /Js/favoritos.js [36m304[0m 1.533 ms - -[0m
+[0mGET /Js/carrito.js [36m304[0m 0.880 ms - -[0m
+[0mGET /Media/productos/pexels-markus-spiske-3053781%20(1).jpg [33m404[0m 1.385 ms - 193[0m
+paginacion: totalproductos:7 total:7 pagina acutual: 3
+[0mGET /productos/pagina/3?_=1602288456943 [32m200[0m 10.171 ms - 2793[0m
+[0mGET /Js/favoritos.js [36m304[0m 0.841 ms - -[0m
+[0mGET /Js/carrito.js [36m304[0m 1.251 ms - -[0m
+[0mGET /Media/productos/pexels-felipe-parucker-3134214.jpg [33m404[0m 1.997 ms - 189[0m
+paginacion: totalproductos:7 total:7 pagina acutual: 2
+[0mGET /productos/pagina/2?_=1602288456944 [32m200[0m 16.938 ms - 2829[0m
+[0mGET /Js/favoritos.js [36m304[0m 1.039 ms - -[0m
+[0mGET /Js/carrito.js [36m304[0m 1.614 ms - -[0m
+[0mGET /Media/productos/pexels-abhishek-saini-2929411.jpg [33m404[0m 1.158 ms - 188[0m
+paginacion: totalproductos:7 total:7 pagina acutual: 1
+[0mGET /productos/pagina/1?_=1602288456945 [32m200[0m 10.929 ms - 2578[0m
+[0mGET /Js/favoritos.js [36m304[0m 1.202 ms - -[0m
+[0mGET /Js/carrito.js [36m304[0m 0.943 ms - -[0m
+[0mGET /Media/productos/pexels-alex-andrews-821651%20(1).jpg [33m404[0m 1.826 ms - 191[0m
